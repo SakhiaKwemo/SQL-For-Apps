@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Resource</title>
+</head>
+<body>
+  <h1>Resource: <%= resource.name %></h1>
+
+  <h2>Edit resource</h2>
+  <form action="/resources/<%= resource.id %>" method="POST">
+    <input type="text" name="name" placeholder="Resource name" value="<%= resource.name %>" required>
+    <button type="submit">Update</button>
+  </form>
+</body

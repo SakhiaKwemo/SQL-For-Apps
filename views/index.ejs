@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Resources</title>
+</head>
+<body>
+  <h1>Resources</h1>
+  <ul>
+    <% resources.forEach(resource => { %>
+      <li>
+        <a href="/resources/<%= resource.id %>"><%= resource.name %></a>
+        <form action="/resources/<%= resource.id %>/delete" method="POST" style="display:inline;">
+          <button type="submit">Delete</button>
+        </form>
+      </li>
+    <% }); %>
+  </ul>
+
+  <h2>Create a new resource</h2>
+  <form action="/resources" method="POST">
+    <input type="text" name="name" placeholder="Resource name" required>
+    <button type="submit">Create</button>
+  </form>
+</body>
+</html>
